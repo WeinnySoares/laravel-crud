@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -99,6 +100,10 @@ class ProductController extends Controller
 
         if($request->file('image')){
             $path = $request->file('image')->store('img/produtos', 'public');
+            
+            if($product->image){
+                Storage::disk('public')->delete($product->image);
+            }
         }
 
         $product->update(
