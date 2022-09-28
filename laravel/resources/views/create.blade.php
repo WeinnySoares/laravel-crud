@@ -38,7 +38,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Preço:</strong>
-                    <input type="text" name="price" class="form-control" placeholder="preço">
+                    <input type="text" name="price" class="form-control" placeholder="preço" onkeypress="formatCurrency(this)">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
