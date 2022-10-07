@@ -32,8 +32,12 @@
             <td>{{ $product->price }}</td>
             <td>{{ $product->description }}</td>
             <td>
-                <form action="{{ route('products.destroy',$product->id) }}" method="POST">
-                    <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Editar</a>
+                <form action="{{ route('products.destroy', $product->id)}}" method="post">
+                  <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Editar</a>
+                  &nbsp;
+                  @csrf
+                  @method('DELETE')
+                  <button class="btn btn-danger" type="submit">Delete</button>
                 </form>
             </td>
         </tr>
